@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual env
+.venv/
+venv/
+.uv-python/
+.uv-cache/
+
+# Secrets
+.env
+
+# Generated data (rebuild with scripts/build_database.py)
+data/*.duckdb
+data/*.parquet
+data/*.csv
+
+# OS
+.DS_Store

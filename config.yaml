@@ -1,0 +1,22 @@
+database:
+  path: data/ecommerce.duckdb
+  seed: 42
+
+llm:
+  provider: openai
+  model: gpt-4o-mini
+  base_url: null            # null = endpoint OpenAI par défaut
+  temperature: 0.2
+  candidates: 3             # nombre de candidats demandés au LLM
+  api_key_env: OPENAI_API_KEY
+
+ranking:
+  model_path: models/ranker.txt
+  feature_names_path: models/feature_names.json
+  metrics_path: models/metrics.json
+  k: 5                      # NDCG@k
+  label_gain: [0, 1, 3, 7]
+
+data:
+  training_parquet: data/ranker_training.parquet
+  n_questions: 700          # questions synthétiques pour entraîner le ranker

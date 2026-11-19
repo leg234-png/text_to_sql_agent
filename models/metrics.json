@@ -1,0 +1,28 @@
+{
+  "metric": "NDCG@5",
+  "baseline_tfidf": 0.4237,
+  "baseline_tfidf_std": 0.0246,
+  "learned_lambdarank": 0.8962,
+  "learned_lambdarank_std": 0.0007,
+  "per_split_baseline": [
+    0.4544,
+    0.3942,
+    0.4225
+  ],
+  "per_split_learned": [
+    0.896,
+    0.8971,
+    0.8955
+  ],
+  "n_train_questions": 560,
+  "n_test_questions": 140,
+  "n_candidates": 8773,
+  "model": "lightgbm.LGBMRanker",
+  "label_gain": [
+    0,
+    1,
+    3,
+    7
+  ],
+  "seed": 42
+}

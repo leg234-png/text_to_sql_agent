@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "text-to-sql-agent"
+version = "0.1.0"
+description = "LLM Text-to-SQL agent with learned result ranking over an 81,000-row e-commerce warehouse (NDCG@5 0.89 vs 0.41 TF-IDF baseline)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "leg234-png" }]
+keywords = ["text-to-sql", "nlp", "llm", "ranking", "learning-to-rank", "duckdb"]
+dependencies = [
+    "duckdb>=1.0",
+    "numpy>=1.26",
+    "pandas>=2.0",
+    "pyarrow>=14.0",
+    "pyyaml>=6.0",
+    "rich>=13.0",
+    "lightgbm>=4.3",
+    "scikit-learn>=1.3",
+    "openai>=1.30",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+text2sql = "text_to_sql_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
